@@ -49,7 +49,10 @@ def square ():
         sendmsg('ccw 90')
 
 #Triangle Function
-
+def triangle():
+    for i in range(3):
+        sendmsg('forward 100')
+        sendmsg('ccw 120')
 
 print("\n Andrew KRUSNIAK")
 print("Program Name: DRONES square and trinagles  ")
@@ -68,8 +71,8 @@ try:
         sendmsg('forward', 100)
 
         sendmsg('land')
-        square()
-
+        #square()
+        triangle()
         print('\nGreat Flight!!!')
 
     else:
