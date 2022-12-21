@@ -41,7 +41,14 @@ recvThread = threading.Thread(target=recv)
 recvThread.start()
 
 
-# CREATE FUNCTIONS HERE....
+# Square FUNCTIONS
+
+def square ():
+    for i in range(4):
+        sendmsg('forward 100')
+        sendmsg('ccw 90')
+
+#Triangle Function
 
 
 print("\n Andrew KRUSNIAK")
@@ -61,6 +68,7 @@ try:
         sendmsg('forward', 100)
 
         sendmsg('land')
+        square()
 
         print('\nGreat Flight!!!')
 
