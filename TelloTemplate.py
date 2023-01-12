@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 12):
+def sendmsg(msg, sleep = 10):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -43,16 +43,15 @@ recvThread.start()
 
 # CREATE FUNCTIONS HERE....
 def first_Hoop():
-    sendmsg('takeoff')
-    sendmsg('forward 294')
+    sendmsg('forward 180')
 #out
 
 def second_Hoop():
-    sendmsg('up 50',8)
-    sendmsg('go -200+300, -100+200, -20+60', 8)
+    sendmsg('go 160 30 100 100', 6)
+#out
 
-
-#def third_Hoop():
+def third_Hoop():
+    sendmsg('curve 50 -50 0 50 -100 0 30')
 
 #def last_Hoop():
 
@@ -70,10 +69,13 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
-        #first_Hoop()
+        sendmsg('takeoff', 8)
 
-        second_Hoop()
+        sendmsg('forward 190',8)
+        sendmsg('go 160 -30 170 170', 8)
+
+
+
 
         sendmsg('land')
 
